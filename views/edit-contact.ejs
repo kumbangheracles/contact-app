@@ -1,0 +1,68 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <h2 class="text-center mb-4">Form Update Kontak</h2>
+
+      <% if (typeof errors !== 'undefined' && errors.length > 0) { %>
+      <div class="alert alert-danger" role="alert">
+        <ul>
+          <% errors.forEach(error => { %>
+          <li><%= error.msg %></li>
+          <% }) %>
+        </ul>
+      </div>
+      <% } %>
+      <div class="card p-4 shadow">
+        <form method="post" action="/contact/update">
+          <input
+            type="hidden"
+            name="oldNama"
+            value="<%=  contact.oldNama || contact.nama %>"
+          />
+          <div class="mb-3">
+            <label for="nama" class="form-label">Nama Lengkap</label>
+            <input
+              type="text"
+              class="form-control"
+              id="nama"
+              name="nama"
+              placeholder="Masukkan Nama"
+              value="<%= contact.nama %>"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="noHp" class="form-label">Nomor HP</label>
+            <input
+              type="number"
+              class="form-control"
+              id="noHp"
+              name="noHp"
+              placeholder="Masukkan No HP"
+              value="<%= contact.noHp %>"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              name="email"
+              placeholder="Masukkan Email"
+              value="<%= contact.email %>"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Update</button>
+          <a
+            type="button"
+            class="btn btn-primary w-100"
+            style="margin-top: 10px"
+            href="/contact"
+          >
+            Kembali ke contact
+          </a>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
