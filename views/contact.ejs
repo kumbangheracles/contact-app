@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <!-- <div class="input-container">
+        <form action="" class="form-input">
+          <input
+            type="text"
+            name="nama"
+            id="input-name"
+            placeholder="masukkan nama . . ."
+          />
+          <input
+            type="number"
+            name="number"
+            id="input-nohp"
+            placeholder="no hp . . . "
+          />
+          <input
+            type="email"
+            name="email"
+            id="input-email"
+            placeholder="email . . ."
+          />
+          <button class="btn btn-success">Add Contact</button>
+        </form>
+      </div> -->
+
+      <% if (msg.length !== 0) { %>
+      <div class="alert alert-success" role="alert">
+        <strong>Berhasil!</strong>
+        <p><%= msg %></p>
+      </div>
+      <% } %>
+
+      <h2>Daftar Contact</h2>
+      <a href="/contact/add" class="btn btn-primary">Add Contact</a>
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nama</th>
+            <th scope="col">No HP</th>
+            <th scope="col">Aksi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% contacts.forEach((contact, i) => {i++ %>
+          <tr>
+            <th scope="row"><%= i %></th>
+            <td><%= contact.nama %></td>
+            <td><%= contact.noHp %></td>
+            <td><%= contact.email %></td>
+            <td>
+              <a
+                href="contact/<%=contact.nama%>"
+                class="btn btn-success badge rounded-pill"
+                >Detail</a
+              >
+            </td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
