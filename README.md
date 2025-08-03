@@ -1,7 +1,7 @@
 # Contact App
 
 ## Description
-Contact App is my first project aimed at managing a contact list with CRUD (Create, Read, Update, Delete) features. This application is built using **EJS** for the frontend and **Express.js with MySQL** for the backend.
+Contact App is my first project aimed at managing a contact list with CRUD (Create, Read, Update, Delete) features. This application is built using **EJS** for the frontend and **Express.js with MongoDB** for the backend.
 
 ## Features
 - Add new contacts
